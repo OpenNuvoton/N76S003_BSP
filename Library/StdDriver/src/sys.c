@@ -73,7 +73,7 @@
         hircmap0 = (trimvalue16bit >> 1);
       break;
 
-        default: break;                                       /*N76E003 process */
+        default: break;                                       /*N76S003 process */
     }
 
     TA = 0xAA;

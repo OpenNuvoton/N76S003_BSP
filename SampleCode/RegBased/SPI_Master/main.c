@@ -32,7 +32,7 @@ void SPI_Initial(void)
     clr_SPCR_CPHA;                                   // The data is sample on the second edge of SPI clock 
     
     set_SPCR_MSTR;                                   // SPI in Master mode 
-    SPICLK_FSYS_DIV16;                                    // Select SPI clock 
+    SPICLK_FSYS_DIV16;                               // Select SPI clock
     set_SPCR_SPIEN;                                  // Enable SPI function 
     clr_SPSR_SPIF;
 }

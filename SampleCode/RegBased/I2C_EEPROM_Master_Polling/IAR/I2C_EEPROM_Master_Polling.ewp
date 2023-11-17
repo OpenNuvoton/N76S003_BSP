@@ -175,7 +175,7 @@
                 </option>
                 <option>
                     <name>General Xdata Stack Size</name>
-                    <state>0x1FF</state>
+                    <state>0x100</state>
                 </option>
                 <option>
                     <name>General Ext Stack Size</name>
@@ -279,7 +279,7 @@
                 </option>
                 <option>
                     <name>OGChipConfigPath</name>
-                    <state>C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\8051\config\devices\NuvoTon\MG51\MG51.i51</state>
+                    <state>C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\8051\config\devices\NuvoTon\N76S003.i51</state>
                 </option>
             </data>
         </settings>
@@ -946,7 +946,7 @@
                 </option>
                 <option>
                     <name>ExtraOutputFile</name>
-                    <state>I2C_EEPROM_Slave.a51</state>
+                    <state>I2C_EEPROM_Master_Polling.a51</state>
                 </option>
                 <option>
                     <name>ExtraOutputFormat</name>
@@ -1363,11 +1363,11 @@
                 </option>
                 <option>
                     <name>OGChipSelectMenu</name>
-                    <state>N76E003	N76E003</state>
+                    <state>N76S003	N76S003</state>
                 </option>
                 <option>
                     <name>OGChipSelectMenuSlave</name>
-                    <state>N76E003	N76E003</state>
+                    <state>N76S003	N76S003</state>
                 </option>
                 <option>
                     <name>DPC Address</name>
@@ -1391,7 +1391,7 @@
                 </option>
                 <option>
                     <name>OGChipConfigPath</name>
-                    <state>$TOOLKIT_DIR$\config\devices\NuvoTon\N76E003.i51</state>
+                    <state>$TOOLKIT_DIR$\config\devices\NuvoTon\N76S003.i51</state>
                 </option>
             </data>
         </settings>

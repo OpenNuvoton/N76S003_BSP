@@ -819,7 +819,7 @@
                 </option>
                 <option>
                     <name>DdfFile master</name>
-                    <state>$TOOLKIT_DIR$\config\devices\NuvoTon\ioN76E003.ddf</state>
+                    <state>$TOOLKIT_DIR$\config\devices\NuvoTon\ioN76S003.ddf</state>
                 </option>
                 <option>
                     <name>OCImagesOffset1</name>

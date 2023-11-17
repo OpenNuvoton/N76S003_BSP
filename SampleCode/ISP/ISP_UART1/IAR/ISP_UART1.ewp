@@ -175,7 +175,7 @@
                 </option>
                 <option>
                     <name>General Xdata Stack Size</name>
-                    <state>0x1FF</state>
+                    <state>0x100</state>
                 </option>
                 <option>
                     <name>General Ext Stack Size</name>
@@ -1364,11 +1364,11 @@
                 </option>
                 <option>
                     <name>OGChipSelectMenu</name>
-                    <state>N76E003	N76E003</state>
+                    <state>N76S003	N76S003</state>
                 </option>
                 <option>
                     <name>OGChipSelectMenuSlave</name>
-                    <state>N76E003	N76E003</state>
+                    <state>N76S003	N76S003</state>
                 </option>
                 <option>
                     <name>DPC Address</name>
@@ -1392,7 +1392,7 @@
                 </option>
                 <option>
                     <name>OGChipConfigPath</name>
-                    <state>$TOOLKIT_DIR$\config\devices\NuvoTon\N76E003.i51</state>
+                    <state>$TOOLKIT_DIR$\config\devices\NuvoTon\N76S003.i51</state>
                 </option>
             </data>
         </settings>

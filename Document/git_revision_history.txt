@@ -12,4 +12,6 @@
 
 
 2023/11
-1.All                         merge sfr_macro and function define header file.
+1.All                         Merge sfr_macro and function define header file.
+2.eeprom/eeprom_sprom         Update to add check program data and setting error flag function. 
+3.SFRS page                   modify interrupt vector push/pop SFRS to SFR_TMP with TA protect.
