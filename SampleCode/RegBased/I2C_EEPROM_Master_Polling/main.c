@@ -346,7 +346,7 @@ void main(void)
     One_Page_Read (255,0x0F);                   //page255, read  0x0F,0xF0,........
 
     /* ==== Test Pass ==== */      
-    printf ("\n\r MS51 <--> 24LC64, I2C Demo Code test pass...");
+    printf ("\n\r N76S003 <--> 24LC64, I2C Demo Code test pass...");
 
     while (1);
 /* =================== */

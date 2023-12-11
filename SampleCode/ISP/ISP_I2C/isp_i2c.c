@@ -159,14 +159,14 @@ if(g_timer0Counter)
 
 void Init_I2C(void)
 {
-    P03_OPENDRAIN_MODE;                         //set SCL (P13) is Opendrain mode
-    P04_OPENDRAIN_MODE;                         //set SDA (P14) is Opendrain mode
+    P03_OPENDRAIN_MODE;                     //set SCL  is Opendrain mode
+    P04_OPENDRAIN_MODE;                     //set SDA  is Opendrain mode
 
     SDA = 1;                                //set SDA and SCL pins high
     SCL = 1;
-    set_EIE_EI2C;                               //enable I2C interrupt by setting IE1 bit 0
-    set_I2CON_I2CEN;                              //enable I2C circuit
-    I2ADDR = ADDR_SLA;                    //#include "ms51_8k.h" own slave address
+    set_EIE_EI2C;                           //enable I2C interrupt by setting IE1 bit 0
+    set_I2CON_I2CEN;                        //enable I2C circuit
+    I2ADDR = ADDR_SLA;                    
     SI = 0;
     AA = 1;
     EA=1;

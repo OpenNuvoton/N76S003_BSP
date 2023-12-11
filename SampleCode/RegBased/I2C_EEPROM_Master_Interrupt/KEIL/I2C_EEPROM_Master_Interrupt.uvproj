@@ -20,7 +20,7 @@
           <StartupFile>"LIB\STARTUP.A51" ("Standard 8051 Startup Code")</StartupFile>
           <FlashDriverDll />
           <DeviceId>0</DeviceId>
-          <RegisterFile>MG51.H</RegisterFile>
+          <RegisterFile>N76S003.H</RegisterFile>
           <MemoryEnv />
           <Cmp />
           <Asm />

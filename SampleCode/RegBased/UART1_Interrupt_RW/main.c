@@ -42,7 +42,7 @@ void SerialPort1_ISR(void) __interrupt (15)
 /****************************************************************************************************************
  * FUNCTION_PURPOSE: Main function 
   
- !!! MS51FB9AE / MS51XB9AE /MS51XB9BE UART1 pin also occupied by debug pin, 
+ !!! UART1 pin also occupied by debug pin, 
  please remove Nu-link or not in debug mode to test UART1 function.
 
  External UART1 connect also disturb debug download

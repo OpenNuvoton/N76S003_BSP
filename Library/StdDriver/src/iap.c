@@ -37,21 +37,21 @@ BIT  ConfigModifyFlag;
 
 /**
  * @brief       Erase LDROM  
- * @param       u16IAPStartAddress #include "ms51_8k.h" LDROM area start address
- * @param       u16IAPDataSize #include "ms51_8k.h" LDROM need be erase bytes size
+ * @param       u16IAPStartAddress  LDROM area start address
+ * @param       u16IAPDataSize LDROM need be erase bytes size
  * @return      none
  * @details     Page erase LDROM area base on data start address 
  * @example      Erase_LDROM(0x0000,2048);
  */
-void Erase_LDROM(unsigned int u16IAPStartAddress,unsigned int u16IAPDataSize)
+void Erase_LDROM(uint16_t u16IAPStartAddress,uint16_t u16IAPDataSize)
 {   
-    unsigned int u16Count;
+    uint16_t u16Count;
 
     set_CHPCON_IAPEN;                    // Enable IAP function
     set_IAPUEN_LDUEN;                    //  LDROM modify Enable
     IAPFD = 0xFF;                        // IMPORTANT !! To erase function must setting IAPFD = 0xFF 
     IAPCN = PAGE_ERASE_LDROM;
-    for(u16Count=0x0000;u16Count<(u16IAPDataSize/PAGE_SIZE);u16Count++)            // Loop page erase LDROM special #include "ms51_8k.h" address area.
+    for(u16Count=0x0000;u16Count<(u16IAPDataSize/PAGE_SIZE);u16Count++)
     {        
         IAPAL = LOBYTE(u16Count*PAGE_SIZE + u16IAPStartAddress);
         IAPAH = HIBYTE(u16Count*PAGE_SIZE + u16IAPStartAddress);
@@ -63,15 +63,15 @@ void Erase_LDROM(unsigned int u16IAPStartAddress,unsigned int u16IAPDataSize)
 
 /**
  * @brief       LDROM blank check
- * @param       u16IAPStartAddress #include "ms51_8k.h" LDROM area start address
- * @param       u16IAPDataSize #include "ms51_8k.h" LDROM need be erase bytes size
+ * @param       u16IAPStartAddress  LDROM area start address
+ * @param       u16IAPDataSize LDROM need be erase bytes size
  * @return      none
  * @details     Check each byte of LDROM is FFH or not.
  * @example      LDROM_BlanckCheck(0x0000,2048);
  */
-void Erase_Verify_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
+void Erase_Verify_LDROM(uint16_t u16IAPStartAddress, uint16_t u16IAPDataSize)
 {   
-    unsigned int u16Count;
+    uint16_t u16Count;
     set_CHPCON_IAPEN;
     IAPAL = LOBYTE(u16IAPStartAddress);
     IAPAH = HIBYTE(u16IAPStartAddress);
@@ -92,15 +92,15 @@ void Erase_Verify_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPData
 
 /**
  * @brief       LDROM program loop
- * @param       u16IAPStartAddress #include "ms51_8k.h" LDROM area start address
- * @param       u16IAPDataSize #include "ms51_8k.h" LDROM need be erase bytes size
+ * @param       u16IAPStartAddress LDROM area start address
+ * @param       u16IAPDataSize LDROM need be erase bytes size
  * @return      none
  * @details     Copy IAPDataBuf to LDROM
  * @example      LDROM_Program(0x0000,1024);
  */
-void Program_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
+void Program_LDROM(uint16_t u16IAPStartAddress, uint16_t u16IAPDataSize)
 {   
-    unsigned int u16Count;
+    uint16_t u16Count;
 
     set_CHPCON_IAPEN;
     set_IAPUEN_LDUEN;    
@@ -125,15 +125,15 @@ void Program_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
 
 /**
  * @brief       LDROM check loop
- * @param       u16IAPStartAddress #include "ms51_8k.h" LDROM area start address
- * @param       u16IAPDataSize #include "ms51_8k.h" LDROM need be erase bytes size
+ * @param       u16IAPStartAddress LDROM area start address
+ * @param       u16IAPDataSize LDROM need be erase bytes size
  * @return      none
  * @details     Check with XRAM IAPDataBuf with LDROM
  * @example      LDROM_Program_Verify(0x0000,1024);
  */
-void Program_Verify_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
+void Program_Verify_LDROM(uint16_t u16IAPStartAddress, uint16_t u16IAPDataSize)
 {   
-    unsigned int u16Count;
+    uint16_t u16Count;
 
     set_CHPCON_IAPEN;
     IAPAL = LOBYTE(u16IAPStartAddress);
@@ -156,15 +156,15 @@ void Program_Verify_LDROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDa
 
 /**
  * @brief       Erase APROM  
- * @param       u16IAPStartAddress #include "ms51_8k.h" APROM area start address
- * @param       u16IAPDataSize #include "ms51_8k.h" LDROM need be erase bytes size
+ * @param       u16IAPStartAddress APROM area start address
+ * @param       u16IAPDataSize  LDROM need be erase bytes size
  * @return      none
  * @details     Page erase APROM area base on data start address 
  * @example      Erase_APROM(0x0000,2048);
  */
-void Erase_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
+void Erase_APROM(uint16_t u16IAPStartAddress, uint16_t u16IAPDataSize)
 {   
-    unsigned int u16Count;
+    uint16_t u16Count;
 
     set_CHPCON_IAPEN;                    // Enable IAP function
     set_IAPUEN_APUEN;                    // APROM modify Enable
@@ -182,15 +182,15 @@ void Erase_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
 
 /**
  * @brief       APROM blank check
- * @param       u16IAPStartAddress #include "ms51_8k.h" APROM area start address
- * @param       u16IAPDataSize #include "ms51_8k.h" APROM need be erase bytes size
+ * @param       u16IAPStartAddress  APROM area start address
+ * @param       u16IAPDataSize APROM need be erase bytes size
  * @return      none
  * @details     Check each byte of APPROM is FFH or not.
  * @example      APROM_Blank_Check(0x0000,2048);
  */
-void Erase_Verify_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
+void Erase_Verify_APROM(uint16_t u16IAPStartAddress, uint16_t u16IAPDataSize)
 {   
-    unsigned int u16Count;
+    uint16_t u16Count;
   
     set_CHPCON_IAPEN;
     IAPAL = LOBYTE(u16IAPStartAddress);
@@ -211,15 +211,15 @@ void Erase_Verify_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPData
 
 /**
  * @brief       APROM program loop
- * @param       u16IAPStartAddress #include "ms51_8k.h" APROM area start address
- * @param       u16IAPDataSize #include "ms51_8k.h" APROM need be erase bytes size
+ * @param       u16IAPStartAddress APROM area start address
+ * @param       u16IAPDataSize APROM need be erase bytes size
  * @return      none
  * @details     Copy APDataBuf to APROM
  * @example      APROM_Program(0x0000,1024);
  */
-void Program_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
+void Program_APROM(uint16_t u16IAPStartAddress, uint16_t u16IAPDataSize)
 {   
-    unsigned int u16Count;
+    uint16_t u16Count;
 
     set_CHPCON_IAPEN;
     set_IAPUEN_APUEN;    
@@ -243,15 +243,15 @@ void Program_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
 
 /**
  * @brief       APROM check loop
- * @param       u16IAPStartAddress #include "ms51_8k.h" APROM area start address
- * @param       u16IAPDataSize #include "ms51_8k.h" APROM need be erase bytes size
+ * @param       u16IAPStartAddress PROM area start address
+ * @param       u16IAPDataSize APROM need be erase bytes size
  * @return      none
  * @details     Check with XRAM IAPDataBuf with APROM
  * @example      APROM_Program_Verify(0x0000,1024);
  */
-void Program_Verify_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDataSize)
+void Program_Verify_APROM(uint16_t u16IAPStartAddress, uint16_t u16IAPDataSize)
 {   
-    unsigned int u16Count;
+    uint16_t u16Count;
 
     set_CHPCON_IAPEN;
     IAPAL = LOBYTE(u16IAPStartAddress);
@@ -282,9 +282,9 @@ void Program_Verify_APROM(unsigned int u16IAPStartAddress, unsigned int u16IAPDa
                 3. All interrupt is disabled in modify CONFIG process.
  * @example     Modify_CONFIG(0xEF,0xFB,0xEF,0xFF,0xFF);
  */
-void Modify_CONFIG(unsigned char u8CF0,unsigned char u8CF1,unsigned char u8CF2,unsigned char u8CF3,unsigned char u8CF4)
+void Modify_CONFIG(uint8_t u8CF0,uint8_t u8CF1,uint8_t u8CF2,uint8_t u8CF3,uint8_t u8CF4)
 {   
-    unsigned char u8Count;
+    uint8_t u8Count;
 
     if(PCON&SET_BIT4)        /* Check with power on flag. Only the first power on check with CONFIG */
     {
@@ -400,7 +400,7 @@ CFCLOSE:
  */
 void Read_CONFIG(void)
 {
-    unsigned char u8Count;
+    uint8_t u8Count;
 
         set_CHPCON_IAPEN;                    // Enable IAP function
         IAPCN = BYTE_READ_CONFIG;
@@ -450,7 +450,7 @@ void Read_UID(void)
  */
 void Read_UCID(void)
 {   
-    unsigned char u8Count;
+    uint8_t u8Count;
 
     set_CHPCON_IAPEN;
     IAPAL = 0x20;
@@ -476,7 +476,7 @@ void Read_UCID(void)
 */
 void Read_DID(void)
 {   
-    unsigned char u8Count;
+    uint8_t u8Count;
 
     set_CHPCON_IAPEN;
     IAPAL = 0x00;
@@ -501,7 +501,7 @@ void Read_DID(void)
 */
 void Read_PID(void)
 {   
-    unsigned char u8Count;
+    uint8_t u8Count;
 
     set_CHPCON_IAPEN;
     IAPAL = 0x02;

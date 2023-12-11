@@ -63,8 +63,7 @@ void SerialPort1_ISR(void) __interrupt (15)
 }
 #endif
 
-/*MS51 new version buadrate */
-void UART_Open(unsigned long u32SysClock, unsigned char u8UARTPort,unsigned long u32Baudrate)
+void UART_Open(uint32_t u32SysClock, uint8_t u8UARTPort,uint32_t u32Baudrate)
 {
   switch(u8UARTPort)
   {
@@ -99,7 +98,7 @@ void UART_Open(unsigned long u32SysClock, unsigned char u8UARTPort,unsigned long
 }
 
 #if 0 
-unsigned char Receive_Data(unsigned char UARTPort)
+uint8_t Receive_Data(uint8_t UARTPort)
 {
     UINT8 c;
     switch (UARTPort)
